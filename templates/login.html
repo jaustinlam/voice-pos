@@ -1,3 +1,55 @@
+{% extends "base.html" %}
+
 {% block content %}
-Hello
+<div class="row">
+	<div class="col s12">
+		<h2 class="center-align">Welcome</h2>
+	</div>
+	<form class="col s6 offset-s3" method="post">
+		<div class="input-field col s12">
+			<input type="password" class="validate center-align" id="passcode_text" name="passcode" maxlength="4">
+		</div>
+		<div class="col s4 buttongrid">
+			<a class="btn-large white black-text waves-effect waves-black login-button">1</a>
+		</div>
+		<div class="col s4 buttongrid">
+			<a class="btn-large white black-text waves-effect waves-black login-button">2</a>
+		</div>
+		<div class="col s4 buttongrid">
+			<a class="btn-large white black-text waves-effect waves-black login-button">3</a>
+		</div>
+		<div class="col s4 buttongrid">
+			<a class="btn-large white black-text waves-effect waves-black login-button">4</a>
+		</div>
+		<div class="col s4 buttongrid">
+			<a class="btn-large white black-text waves-effect waves-black login-button">5</a>
+		</div>
+		<div class="col s4 buttongrid">
+			<a class="btn-large white black-text waves-effect waves-black login-button">6</a>
+		</div>
+		<div class="col s4 buttongrid">
+			<a class="btn-large white black-text waves-effect waves-black login-button">7</a>
+		</div>
+		<div class="col s4 buttongrid">
+			<a class="btn-large white black-text waves-effect waves-black login-button">8</a>
+		</div>
+		<div class="col s4 buttongrid">
+			<a class="btn-large white black-text waves-effect waves-black login-button">9</a>
+		</div>
+		<div class="col s4">
+			<a class="btn-large white black-text waves-effect waves-black login-clear">Clear</a>
+		</div>
+		<div class="col s4 buttongrid">
+			<a class="btn-large white black-text waves-effect waves-black login-button">0</a>
+		</div>
+		<div class="col s4 buttongrid">
+			<a class="btn-large white black-text waves-effect waves-black login-back">Back</a>
+		</div>
+		<div class="col s12">
+			<button class="btn-large black white-text waves-effect waves-light login-submit" type="submit">Login</button>
+		</div>
+	</form>
+	<script type='text/javascript' src="{{ url_for('static', filename ='login.js')}}"></script>
+</div>
 {% endblock %}
+

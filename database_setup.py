@@ -1,7 +1,7 @@
 import sys
-from sqlalchemy import Column, ForeignKey, Integer
+from sqlalchemy import Column, ForeignKey, Integer, Float
 from sqlalchemy import String, DateTime, Boolean
-from sqlalchemy import ForeignKeyConstraint
+from sqlalchemy import ForeignKeyConstraint, UniqueConstraint
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
@@ -13,19 +13,22 @@ class Users(Base):
     '''
     __tablename__ = 'users'
 
-    name = Column(
-        String(250), nullable=False)
     id = Column(
         Integer, primary_key=True)
+    name = Column(
+        String(250), nullable=False)
     admin = Column(
         Boolean, default=False, nullable=False)
+    passcode = Column(
+        Integer, nullable=False, unique=True)
 
     @property
     def serialize(self):
         return{
-            'name'  :   self.name,
             'id'    :   self.id,
-            'admin' :   self.admin
+            'name'  :   self.name,
+            'admin' :   self.admin,
+            'passcode'  :   self.passcode
         }
 
 class MenuItems(Base):
@@ -38,7 +41,7 @@ class MenuItems(Base):
     id = Column(
         Integer, primary_key=True)
     price = Column(
-        Integer, nullable=False)
+        Float, nullable=False)
     description = Column(
         String(1000))
 

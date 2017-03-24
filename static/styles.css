@@ -1,1 +1,13 @@
+body {
+	font-family: 'Quicksand', sans-serif;
+}
 
+
+
+.login-button, .login-submit, .login-clear, .login-back{
+	width: 100%;
+}
+
+#passcode_text{
+	font-size: 20pt;
+}

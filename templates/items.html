@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="col s9">
+		<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">settings_voice</i></a>
+
+	voice interface
+	</div>
+	<div class="col s3">
+	ordered items
+	<form method="post">
+	{% if items: %}
+		<ul>
+			{% for i in items: %}
+				<li>{{i}}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	<button type="submit">Test</button>
+	</form>
+	</div>
+
+
+</div>
+
+{% endblock %}
